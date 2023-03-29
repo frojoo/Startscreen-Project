@@ -213,19 +213,5 @@ body main .nft:hover .nftHover {
   justify-content: center;
   align-items: center;
 }
-body main .weather {
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin: 20px;
-  background-color: rgba(169, 169, 169, 0.723);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 5px;
-}
-body main .weatherTemp {
-  padding-bottom: 5px;
-}
 
 /*# sourceMappingURL=style.css.map */

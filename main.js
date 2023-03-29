@@ -161,23 +161,3 @@ function onClickToggle(value) {
     nftView.style.animation = "none";
   }
 }
-
-const API_KEY = "f81bb932814ec208f6e4a5d19fcd6b89";
-const weatherIcon = document.querySelector(".weatherIcon");
-const weatherTemp = document.querySelector(".weatherTemp");
-
-navigator.geolocation.getCurrentPosition(
-  (position) => {
-    const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        weatherTemp.innerText = `${data.name},${parseInt(data.main.temp)}℃`;
-      });
-  },
-  () => alert("Not allowed!")
-);
