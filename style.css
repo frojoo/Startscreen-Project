@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+body main, body video {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+body main .newQuotes, body main .quotes, body main .time, body main .date {
+  color: whitesmoke;
+  text-shadow: 3px 3px rgb(102, 102, 102);
+  opacity: 70%;
+  font-size: 80px;
+  font-weight: 600px;
+}
+
+body main .search .searchForm .searchInput, body main .newQuotes .newQuotesInput {
+  border: 0;
+  font-size: 30px;
+  width: 400px;
+  outline: none;
+  background-color: transparent;
+}
+
+body main .nft .nftHover button, body main .nftView, body main .searchRe .resultClose, body main .search .searchForm .searchBtn:hover, body main .newQuotes .newQuotesBtn:hover, body main .quotes:hover .quotesAddBtn {
+  cursor: pointer;
+}
+
+body main .nft .nftHover button, body main .searchRe .resultClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 21px;
+  height: 21px;
+  border: 0;
+}
+
+* {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes move {
+  from {
+    transform: translate(130px, 50px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+body {
+  margin: 0;
+}
+body video {
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+body main {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body main .date {
+  font-size: 35px;
+}
+body main .quotes {
+  font-size: 40px;
+  position: relative;
+}
+body main .quotes .quotesAddBtn {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  display: none;
+  width: 90px;
+  height: 35px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  color: rgb(57, 52, 57);
+  font-size: 20px;
+  border: 0px;
+  font-weight: bold;
+}
+body main .quotes:hover .quotesAddBtn {
+  display: inline-block;
+  color: black;
+}
+body main .quotes:hover .quotesMsg {
+  opacity: 50%;
+}
+body main .newQuotes {
+  display: none;
+}
+body main .newQuotes .newQuotesInput {
+  border-bottom: 5px solid rgb(255, 255, 255);
+  color: white;
+}
+body main .newQuotes .newQuotesBtn {
+  font-size: 30px;
+  color: white;
+  border: 0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  border-radius: 10px;
+}
+body main .newQuotes .newQuotesBtn:hover {
+  transform: scale(1.05);
+}
+body main .search {
+  margin-top: 60px;
+  font-size: 32px;
+}
+body main .search .searchTitle {
+  display: flex;
+  align-items: center;
+  background-color: #10a37f;
+  padding: 0 5px;
+}
+body main .search .searchTitle .searchLogo {
+  width: 32px;
+  height: 32px;
+  animation: spin 15s linear infinite;
+  margin-right: 10px;
+}
+body main .search .searchForm {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+body main .search .searchForm .searchInput {
+  font-size: 23px;
+  border: 5px solid #10a37f;
+  background-color: rgba(199, 199, 199, 0.421);
+}
+body main .search .searchForm .searchBtn {
+  width: 30px;
+  height: 30px;
+  background-color: #10a37f;
+  padding: 5px 5px 5px 0;
+}
+body main .search .searchForm .searchBtn:hover {
+  transform: scale(1.01);
+}
+body main .searchRe {
+  position: relative;
+  background-color: rgba(199, 199, 199, 0.421);
+  overflow-y: auto;
+}
+body main .searchRe .searchResult {
+  font-size: 20px;
+  display: none;
+}
+body main .searchRe .resultClose {
+  background-color: rgba(255, 255, 255, 0.582);
+  border: 0;
+  display: none;
+}
+body main .searchRe:hover .resultClose {
+  display: inline-block;
+}
+body main .nftView {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 24px;
+  width: 100px;
+  height: 100px;
+  animation: move 10s 1;
+}
+body main .nft {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  display: none;
+}
+body main .nft .nftHover {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 4px;
+  display: none;
+}
+body main .nft .nftHover a {
+  background-color: rgb(255, 252, 179);
+  color: black;
+  text-decoration-line: none;
+}
+body main .nft .nftHover button {
+  margin: -8px;
+  border-radius: 9999px;
+}
+body main .nft img {
+  width: 120px;
+  height: 120px;
+}
+body main .nft:hover .nftHover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .weather {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  background-color: rgba(169, 169, 169, 0.723);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+}
+body main .weatherTemp {
+  padding-bottom: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */

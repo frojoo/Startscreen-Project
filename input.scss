@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+@import "theme";
+
+* {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translate(130px, 50px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+body {
+  margin: 0;
+
+  video {
+    @extend %fix_size;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  main {
+    @extend %fix_size;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .date {
+      @extend %font;
+      font-size: 35px;
+    }
+
+    .time {
+      @extend %font;
+    }
+
+    .quotes {
+      @extend %font;
+      font-size: 40px;
+      position: relative;
+
+      .quotesAddBtn {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        display: none;
+        width: 90px;
+        height: 35px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        color: rgb(57, 52, 57);
+        font-size: 20px;
+        border: 0px;
+        font-weight: bold;
+      }
+      &:hover {
+        .quotesAddBtn {
+          display: inline-block;
+          color: black;
+          @extend %btnCursor;
+        }
+        .quotesMsg {
+          opacity: 50%;
+        }
+      }
+    }
+
+    .newQuotes {
+      display: none;
+      @extend %font;
+
+      .newQuotesInput {
+        @extend %inputStyle;
+        border-bottom: 5px solid rgb(255, 255, 255);
+        color: white;
+      }
+
+      .newQuotesBtn {
+        font-size: 30px;
+        color: white;
+        border: 0;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        border-radius: 10px;
+
+        &:hover {
+          @extend %btnCursor;
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .search {
+      margin-top: 60px;
+      font-size: 32px;
+
+      .searchTitle {
+        display: flex;
+        align-items: center;
+        background-color: $chat;
+        padding: 0 5px;
+
+        .searchLogo {
+          width: 32px;
+          height: 32px;
+          animation: spin 15s linear infinite;
+          margin-right: 10px;
+        }
+      }
+
+      .searchForm {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+
+        .searchInput {
+          @extend %inputStyle;
+          font-size: 23px;
+          border: 5px solid $chat;
+          background-color: rgba(199, 199, 199, 0.421);
+        }
+
+        .searchBtn {
+          width: 30px;
+          height: 30px;
+          background-color: $chat;
+          padding: 5px 5px 5px 0;
+
+          &:hover {
+            @extend %btnCursor;
+            transform: scale(1.01);
+          }
+        }
+      }
+    }
+
+    .searchRe {
+      position: relative;
+      background-color: rgba(199, 199, 199, 0.421);
+      overflow-y: auto;
+
+      .searchResult {
+        font-size: 20px;
+        display: none;
+      }
+
+      .resultClose {
+        @extend %closeBtn;
+        @extend %btnCursor;
+        background-color: rgba(255, 255, 255, 0.582);
+        border: 0;
+        display: none;
+      }
+      &:hover {
+        .resultClose {
+          display: inline-block;
+        }
+      }
+    }
+
+    .nftView {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin: 24px;
+      width: 100px;
+      height: 100px;
+      @extend %btnCursor;
+      animation: move 10s 1;
+    }
+
+    .nft {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin: 20px;
+      display: none;
+
+      .nftHover {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 120px;
+        height: 120px;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin-bottom: 4px;
+        display: none;
+
+        a {
+          background-color: rgb(255, 252, 179);
+          color: black;
+          text-decoration-line: none;
+        }
+
+        button {
+          @extend %closeBtn;
+          @extend %btnCursor;
+          margin: -8px;
+          border-radius: 9999px;
+        }
+      }
+
+      img {
+        width: 120px;
+        height: 120px;
+      }
+      &:hover {
+        .nftHover {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .weather {
+      position: fixed;
+      top: 0;
+      right: 0;
+      margin: 20px;
+      background-color: rgba(169, 169, 169, 0.723);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 5px;
+    }
+
+    .weatherTemp {
+      padding-bottom: 5px;
+    }
+  }
+}

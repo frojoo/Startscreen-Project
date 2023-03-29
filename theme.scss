@@ -1,0 +1,36 @@
+$chat: #10a37f;
+
+%fix_size {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+%font {
+  color: whitesmoke;
+  text-shadow: 3px 3px rgb(102, 102, 102);
+  opacity: 70%;
+  font-size: 80px;
+  font-weight: 600px;
+}
+
+%inputStyle {
+  border: 0;
+  font-size: 30px;
+  width: 400px;
+  outline: none;
+  background-color: transparent;
+}
+
+%btnCursor {
+  cursor: pointer;
+}
+
+%closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 21px;
+  height: 21px;
+  border: 0;
+}
